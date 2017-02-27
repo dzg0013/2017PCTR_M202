@@ -4,11 +4,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @SuppressWarnings("serial")
 public class Billiards extends JFrame {
@@ -22,7 +25,7 @@ public class Billiards extends JFrame {
 
 	
 	private final int N_BALL = 2+3;
-	private Ball[] balls;
+	private Ball[] balls = new Ball[N_BALL];
 
 	public Billiards() {
 
@@ -65,6 +68,13 @@ public class Billiards extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Code is executed when start button is pushed
+			ExecutorService ex = Executors.newFixedThreadPool(N_BALL);
+			BallMove hilo;
+			for (int i =0;i<N_BALL;i++){
+				hilo = new BallMove(balls[i]);
+				ex.execute(hilo);
+			}
+			
 
 		}
 	}
