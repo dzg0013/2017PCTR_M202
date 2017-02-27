@@ -22,7 +22,7 @@ public class Billiards extends JFrame {
 
 	
 	private final int N_BALL = 2+3;
-	private Ball[] balls = new Ball[N_BALL];
+	private Ball[] balls;
 
 	public Billiards() {
 
@@ -49,13 +49,16 @@ public class Billiards extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(Width, Height);
 		setLocationRelativeTo(null);
-		setTitle("Práctica programación concurrente objetos móviles independientes");
+		setTitle("PrÃ¡ctica programaciÃ³n concurrente objetos mÃ³viles independientes");
 		setResizable(false);
 		setVisible(true);
 	}
 
 	private void initBalls() {
-		// TODO init balls
+		
+		for(int i=0; i<N_BALL;i++){
+			balls[i]= new Ball();
+		}
 	}
 
 	private class StartListener implements ActionListener {
