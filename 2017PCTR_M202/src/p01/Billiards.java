@@ -22,7 +22,7 @@ public class Billiards extends JFrame {
 
 	
 	private final int N_BALL = 2+3;
-	private Ball[] balls;
+	private Ball[] balls = new Ball[N_BALL];
 
 	public Billiards() {
 
