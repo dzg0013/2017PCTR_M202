@@ -85,7 +85,6 @@ public class Ball {
 		assert pos1<Board.BOTTOMBOARD;
 		assert pos2>Board.LEFTBOARD;
 		assert pos2<Board.RIGHTBOARD;
-		
 	}
 
 }
