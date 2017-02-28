@@ -1,17 +1,20 @@
 package p01;
 
+
 public class BallMove extends Thread {
 	
 	private Ball ball;
-	private Board broad;
+	private Board board;
 
-	public BallMove(Ball ball){
+	public BallMove(Ball ball,Board board){
 		this.ball=ball;
+		this.board=board;
 	}
 	
 	public void run(){
-		ball.move();
-		broad.repaint();
+		this.ball.move();
+		this.ball.reflect();
+		this.board.repaint();
 		
 	}
 
