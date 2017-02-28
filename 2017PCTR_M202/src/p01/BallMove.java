@@ -13,11 +13,13 @@ public class BallMove extends Thread {
 	public void run() {
 
 		try {
-			this.ball.move();
-			this.ball.reflect();
-			this.board.validate();
-			this.board.repaint();
-			Thread.sleep(100);
+			for(;;){
+				this.ball.move();
+				this.ball.reflect();
+				this.board.validate();
+				this.board.repaint();
+				Thread.sleep(30);
+			}
 		} catch (InterruptedException ex) {
 			return;
 		}

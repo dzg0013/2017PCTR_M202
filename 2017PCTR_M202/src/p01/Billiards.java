@@ -67,12 +67,13 @@ public class Billiards extends JFrame {
 	private class StartListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			
+			board.setBalls(balls);
 			BallMove hilo;
 			for (int i =0;i<N_BALL;i++){
+				
 				hilo = new BallMove(balls[i] , board);
 				hilos.add(hilo);
-				hilos.get(i).run();
+				hilos.get(i).start();
 			}
 		}
 	}
