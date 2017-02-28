@@ -30,7 +30,8 @@ public class Ball {
 		}
 		x += dx;   
 		y += dy;
-		//TODO Check postcondition
+		
+		postCondition(x,y);
 	}
 
 	public void reflect() {
@@ -46,7 +47,8 @@ public class Ball {
 		if (Math.abs(y - Board.TOPBOARD) <  Math.abs(dy)) {
 			fi = - fi;
 		}
-		//TODO Check postcondition	
+		
+		postCondition(x,y);
 	}
 
 	public int getX() {
@@ -75,6 +77,15 @@ public class Ball {
 
 	public Image getImage() {
 		return image;
+	}
+	
+	private void postCondition (double pos1, double pos2){
+		
+		assert pos1>Board.TOPBOARD;
+		assert pos1<Board.BOTTOMBOARD;
+		assert pos2>Board.LEFTBOARD;
+		assert pos2<Board.RIGHTBOARD;
+		
 	}
 
 }
