@@ -79,12 +79,13 @@ public class Ball {
 		return image;
 	}
 	
-	private void postCondition (double pos1, double pos2){
+	private static void postCondition (double pos1, double pos2){
 		
 		assert pos1>Board.TOPBOARD;
 		assert pos1<Board.BOTTOMBOARD;
 		assert pos2>Board.LEFTBOARD;
 		assert pos2<Board.RIGHTBOARD;
+		
 	}
 
 }
